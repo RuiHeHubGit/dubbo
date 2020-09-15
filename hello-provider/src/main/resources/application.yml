@@ -1,0 +1,29 @@
+server:
+  port: 9001
+dubbo:
+  application:
+    name: hello-proider
+  registry:
+    protocal: zookeeper
+    address: zookeeper://10.86.32.93:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  scan: com.example.service
+
+spring:
+  application:
+    name: hello-proider
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
